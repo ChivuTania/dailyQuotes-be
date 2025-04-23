@@ -6,10 +6,10 @@ public class AddQuoteDTO {
     private String author;
     private boolean posted;
 
-    public AddQuoteDTO(String name, String author, boolean posted) {
+    public AddQuoteDTO(String name, String author) {
         this.name = name;
         this.author = author;
-        this.posted = posted;
+        this.posted = false;
     }
 
     public String getName() {
