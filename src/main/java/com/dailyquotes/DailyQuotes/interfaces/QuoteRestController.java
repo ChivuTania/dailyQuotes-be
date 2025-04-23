@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class QuoteRestController {
     private QuoteService quoteService;
@@ -30,5 +31,11 @@ public class QuoteRestController {
     public ResponseEntity<Void> addQuote(final @RequestBody AddQuoteDTO dto){
         this.quoteService.addQuote(dto);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/quotes/random")
+    public ResponseEntity<Quote> getRandomQuote(){
+        List<Quote> allQuotes = this.quoteService.getAllQuotes();
+        return ResponseEntity.ok(this.quoteService.getRandomQuote(allQuotes));
     }
 }
