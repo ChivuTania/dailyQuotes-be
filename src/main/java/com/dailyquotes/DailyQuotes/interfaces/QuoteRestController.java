@@ -17,7 +17,7 @@ public class QuoteRestController {
         this.quoteService = quoteService;
     }
 
-    @GetMapping("/quotes")
+    @GetMapping
     public ResponseEntity<List<Quote>> getAllQuotes(){
         return ResponseEntity.ok(this.quoteService.getAllQuotes());
     }
