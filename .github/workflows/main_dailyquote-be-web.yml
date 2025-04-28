@@ -12,6 +12,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      DOCDBCONNSTR_cosmosDB: ${{ secrets.COSMOS_DB_CONN_STRING }}
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -35,8 +37,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    env:
-      DOCDBCONNSTR_cosmosDB: ${{ secrets.COSMOS_DB_CONN_STRING }}
     needs: build
     environment:
       name: 'Production'
