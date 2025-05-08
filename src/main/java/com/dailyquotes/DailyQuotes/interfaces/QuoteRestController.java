@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://dailyquote-fe-web-caevdpcac9h6f2hj.westeurope-01.azurewebsites.net")
 @RestController
 public class QuoteRestController {
     private QuoteService quoteService;
